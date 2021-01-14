@@ -40,7 +40,7 @@ Supervisors: Jeong, Cheol-Ho (DTU); Engsig-Karup, Allan Peter (DTU); Hornikx, Ma
 <a name="research_interests"></a>
 
 <h3>Virtual acoustics</h3>
-My primary research theme is in the field of Virtual Acoustics (how to simulate acoustics in virtual buildings and room). This includes developing and implementing numerical methods for solving the physical equations describing the wave behavior and boundary conditions corresponding to those arising in the real world. The focus is on efficient and accurate methods, suitable for massive parallel architectures (e.g. GPUs).
+I am concerned with developing accurate and efficient methods for simulating room acoustics. Applications are in building design, computer games, and mixed reality. The focus is centered around numerical methods solving the underlying physics, implicitly taking wave phenomena into account. Still, it comes with the price of being computationally expensive, especially for larger rooms and for higher frequencies. Therefore, an offline pre-processing step is done to calculate the room impulse responses in a grid, which are then convolved with the source signal at runtime.
 
 <p>
 Currently, I am researching topics within the following areas
@@ -133,50 +133,81 @@ Audio examples
 
 <h2>Teaching</h2>
 <a name="teaching"></a>
-I would be happy to co-supervise projects within the topic of Virtual Acoustics. The following list can be used as inspiration:
+Download the proposed project descriptions <a href="src/projects_VA.pdf" target="_blank"> here</a>. <br> <br>
+
+The project proposals are all centered around the topic `Real-time sound simulations for interactive scenes' with applications in computer games and mixed reality. In interactive scenes, sources and receivers are allowed to move freely, and scene changes should be possible, for example, opening and closing doors, and moving obstacles around. The project proposals are divided into four parts: 
 
 <ul>
-    <li> <b>Automatic hybridization of wave-based and geometrical acoustics simulations</b>
-        <p>
-        Wave-based simulation methods (FEM etc) are highly accurate methods, but they are computationally very heavy and therefore mainly restricted to low/mid frequency simulations. Therefore, a good approach is to combine wave-based methods for the low and mid frequency portion of the spectrum (where most of the wave phenomena happens) and geometrical acoustics simulation methods for the high frequencies (where the geometrical acoustics assumption is fair).
-    <li> <b>Listening tests</b>
-        <p>
-        We are planning some listening tests to find the right perceptual thresholds in virtual acoustics. E.g. how much resolution do we need in the simulation? How accurately do we have to model the geometry? What is the appropriate crossover frequency between wave-based and geometrical simulations?
-    <li> <b>Automatic simplification and setup of architectural models for acoustic simulations. </b>
-        <p>
-        This is a very practical topic - but when you dig into the details there are several highly scientific challenges involved. It's a very important topic. Acoustician spend a huge amount of time remodeling architectural models such that they are suitable for acoustic simulations. Doing the relevant simplifications that make the computations feasible but don't degrade the acoustical accuracy. Exporting / importing models etc. It could be groundbreaking if we could automatically go from complex architectural models to the acoustic models. Integrate the simulators as plug-ins into the architectural drawing software.
-    <li> <b>Spatial sound aspects in wave-based simulations.</b>
-        <p>
-        This refers to developing methods to account for the directivity of sound sources in wave-based simulation methods. Furthermore, to account for directive (binaural / ambisonics) receivers.
-    <li> <b>Real-time convolution and other improvements of our acoustic virtual reality system.</b>
-        <p>
-        We have <a href="https://doi.org/10.1016/j.buildenv.2019.106553" target="_blank">developed an AVR system</a> that allows us to take pre-computed simulation results and experience them in VR. This allows us to couple sound to the visual models, walk around the model and switch between different design options on the fly. The system is very memory intensive because we pre-convolve all of the anechoic sounds with the impulse responses. It would be much more efficient to compute the convolutions on the fly and probably ways for compressing the IRs will needed. Another aspect could be to improve the way we interpolate between different pre-computed IRs on the grid, e.g. using Gaussian regression or other machine learning based methods.
-    <li> <b>Accurate modeling of membrane absorbers and other vibrating airtight surfaces in wave-based simulations.</b>
-        <p>
-        The acoustic properties of room surfaces have a huge influence on the acoustics of spaces and it is very important to model these properties as accurately as possible. One class of absorbers where we could improve our boundary modeling is membrane absorbers (e.g. gypsum walls, membrane bass traps etc). This involves coupling the air domain simulation with a vibro-acoustics simulation of the vibrating surface.
-    <li> <b>Uncertainty quantification of virtual acoustic simulations.</b>
-        <p>
-        We recently carried out a MSc project on this topic involving an analysis of the uncertainty in the model caused by the model inputs (boundary conditions, model geometry etc). This is hugely helpful because it gives insights into when the models can be assumed to be accurate and when not.
-    <li> <b>Numerical improvements.</b>
-        <p>
-        This one is perhaps a bit too technical, but there are aspects on the numerical side that can be improved as well. Local time stepping, variable order simulation, adaptive meshing etc.
+    <li> A) modeling interactive scenes (requires good math/programming skills)
+    <li> B) material modeling (requires good math/programming skills, knowledge in acoustics)
+    <li> C) efficient implementations (requires excellent programming skills)
+    <li> D) method evaluation (requires good knowledge in acoustics)
 </ul>
 
-<h2>Courses as part of PhD study</h2>
+<h4>Project 1a: Modeling flexible geometries at runtime</h4>
+<p>
+    The impulse responses are calculated offline for fixed positions, restricting the flexibility of the scene at runtime. However, in most real-time environments, some modification to the scene should be possible, for example, opening and closing doors, and moving obstacles around. This project should investigate efficient methods for allowing (some) geometrical flexibility at runtime without pre-computing all possible settings, but instead learning to adapt to changes from few pre-processed settings. The methods should be computation efficient and require low storage, yet still exhibiting physically correct results.
+</p>
+
+<h4>Project 2a: Impulse response interpolations</h4>
+<p>
+    The impulse responses are calculated offline for fixed positions in the scene. At runtime, the receivers are allowed to move freely, also at locations where no impulse responses have been calculated. Simple linear interpolations have shown degraded accuracy and therefore more advanced methods should be investigated. A coarser grid means less storage (which can be hundreds of gigabytes in complex scenes) but requires better reconstruction methods. The goal of this project is to develop methods for reconstructing the sound field between the fixed impulse responses.
+</p>
+
+<h4>Project 3a: Impulse response compression</h4>
+<p>
+    The impulse responses for the scenes are pre-calculated for fixed grid position and the storage requirements can be huge in large, complex scenes (up to hundreds of gigabytes). The goal of this project is to compress the impulse responses, taking human perception into account by considering early and late reflections.
+</p>
+
+<h4>Project 4a: Aesthetic modification of room acoustics for interactive auralization</h4>
+<p>
+    On the contrary to architectural acoustics where the goal is to accurately simulate the real-world, games and mixed reality require aesthetic adjustments to the simulated acoustic properties, still requiring realistic acoustics. Room conditions should be adjusted e.g. to increase the intelligibility of important scripted dialogs, or to enhance the perception of a large room by increasing the reverberation time. This project aims to modify the accurately simulated impulse responses to match some required aesthetics in a simple, efficient, and automized manner.
+</p>
+
+<h4>Project 1b: Modeling sound transmission</h4>
+<p>
+    It is important to be able to model sound transmission through materials - such as walls - for realistic, immersive scenes. Sound transmissions can be divided into two types: airborne and structure-borne/impact sound transmission. Airborne transmission is concerned with sound sources in one room inducing vibrations from air pressure waves on one side of a separating wall impacting the structure to transmit the waves through the material. The other face of the structure starts vibrating, transferring the sound into the new domain. Structure-borne/impact transmission is concerned with a sound source in one room resulting from an object impacting a separating surface transmitting the sound to an adjacent room. An example could be footsteps on the floor being transmitted to a room below. This project is concerned with coming up with efficient methods for modeling sound transmission methods for efficient real-time, interactive scenes.
+</p>
+
+<h4>Project 2b: Open-space sound propagation</h4>
+<p>
+    Our methods for sound propagation have been implemented for room acoustics only, but a typical scenario in interactive scenes includes open-spaces - such as outdoor and semi-outdoor scenes. Possible factors to include could be air attenuations and wind impacting the sound field. The goal of this project is to efficiently and realistically simulate outdoor spaces including factors such as air attenuations and wind.
+</p>
+
+<h4>Project 1c: Implementation of the Wave-Based Method on Massively Parallel Systems</h4>
+<p>
+    The Wave-Based Method has been implemented by the group for simulating wave propagation in rooms and is a numerical method for solving the steady-state Helmholtz equation w.r.t. sound pressure. The method is computationally expensive especially for large rooms and high frequencies and therefore an efficient and high-performant implementation is needed for off-line calculations. The goal is to implement the existing method on massively parallel hardware, scalable to many cluster nodes and GPUs in a low-level language as C/C++/Rust and CUDA/AMD ROCm for GPU capabilities. Middle-layer languages for GPU programming, such as Futhark or OCCA can be considered.
+</p>
+
+<h4>Project 1d: Evaluate Project Triton: a tool for immersive sound propagation for games and mixed reality</h4>
+<p>
+    Microsoft has created “Project Triton” for immersive sound propagation for games and mixed reality and a plugin for Unity is available. This project should investigate how well Triton performs concerning some parameters, e.g.
+    <ul>
+        <li> Obstruction/occlusion (diffraction), reverberance/decay time
+        <li> Source/receiver directivity
+        <li> Compare Triton with geometrical acoustics (GA) in interactive scenes: when does GA break down? Investigate smooth transitions moving around occlusion/obstacles (GA has problems here due to the abrupt change of the direct path)
+        <li> Ease of use: UI/UX, compare with the usual way of designing sound in games (using e.g. Wwise from Audiokinetic)
+        <li> Computational efforts
+    </ul>              
+    3) is particularly interesting: The additional accuracy gained from wave physics might not be needed in computer games, so why use wave physics instead of GA? One reason is the smooth transitions when moving around the scene, where it is claimed that GA cannot ensure this.
+</p>
+
+<h2>Courses taken as part of my PhD study</h2>
 <a name="courses"></a>
 <ul>
     <li> <a href="https://kurser.dtu.dk/course/02623" target="_blank">The Finite Element Method for Partial Differential Equations (Januar 2019)</a>
-    <li> <a href="https://kurser.dtu.dk/course/02936" target="_blank">Bayesian Data Analysis (spring 2020)</a>
-    <li> <a href="https://kurser.dtu.dk/course/42750" target="_blank">Sustainability evaluation and communication (August 2020)</a>
-    <li> <a href="https://kurser.dtu.dk/course/02456" target="_blank">Deep Learning (fall 2020)</a>
     <li> <a href="https://kurser.dtu.dk/course/02689" target="_blank">Advanced Numerical Methods for Differential Equations (fall 2020)</a>
+    <li> <a href="https://kurser.dtu.dk/course/02936" target="_blank">Bayesian Data Analysis (spring 2020)</a>    
+    <li> <a href="https://kurser.dtu.dk/course/02456" target="_blank">Deep Learning (fall 2020)</a>    
     <li> <a href="https://kurser.dtu.dk/course/31280" target="_blank">Research Topics in Acoustic Technology (fall/spring 2020/2021)</a>    
+    <li> <a href="https://kurser.dtu.dk/course/42750" target="_blank">Sustainability evaluation and communication (August 2020)</a>
+    <li> How to write a scientific paper (Fall 2020)
 </ul>
 
 <h2>Contact</h2>
 <a name="contact"></a>
 
-Nikolas Borrel-Jensen<br>
+<b>Nikolas Borrel-Jensen</b><br>
 Department of Electrical Engineering, Technical University of Denmark<br>
 Oersteds Plads, Building 352, room 004, 2800 Kgs. Lyngby<br>
 
