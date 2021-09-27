@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">    
-    <meta name="description" content="Overview of my research at the Acoustic Technologies group at DTU Elektro within Virtual Acoustics (SEM, DG-FEM, WBM, domain decomposition methods). Machine learning in the field of music and audio is also of great interest to me."/>
+    <meta name="description" content="Overview of my research at Acoustic Technology, Department of Electrical Engineering, Technical University of Denmark."/>
     <title>Nikolas Borrel-Jensen</title>
 </head>
 
@@ -31,30 +31,30 @@ Nikolas Borrel-Jensen, Master in Computer Science, University of Copenhagen (201
 
 <p>
 
-PhD student at <a href="https://www.dtu.dk/service/telefonbog/person?id=50173" target="_blank">DTU Elektro, Acoustic Technologies</a> (2019-2022). <br>
+PhD student at <a href="https://www.dtu.dk/service/telefonbog/person?id=50173" target="_blank">Acoustic Technology, Department of Electrical Engineering, Technical University of Denmark</a> (2019-2022). <br>
 Supervisors: Jeong, Cheol-Ho (DTU); Engsig-Karup, Allan Peter (DTU); Hornikx, Maarten (TU Eindhoven)
 
 <hr>
 
-<h2>Research Interests</h2>
+<h2>Research interests</h2>
 <a name="research_interests"></a>
 
-<h3>Virtual acoustics</h3>
-I am concerned with developing accurate and efficient methods for simulating room acoustics in dynamic scenes with moving sources/receivers and flexible geometries. Applications are in computer games, mixed reality and building design. The focus is centered around numerical methods solving the underlying physics, implicitly taking wave phenomena into account. Still, it comes with the price of being computationally expensive, especially for larger rooms and for higher frequencies. Therefore, an offline pre-processing step is done to calculate the room impulse responses in a grid, which are then convolved with the source signal at runtime.
+<h3>PhD research topic: Virtual acoustics</h3>
+I am concerned with developing accurate and efficient methods for simulating room acoustics in dynamic scenes with moving sources/receivers and flexible geometries. Applications are in computer games, mixed reality, and building design. The focus is on traditional numerical methods and machine learning methods for solving the underlying physics, implicitly taking wave phenomena into account.
 
 <p>
 Currently, I am researching topics within the following areas
 
 <ul>
-    <li> <a href="https://www.sciencedirect.com/science/article/pii/S0021999118307125" target="_blank">Physics-Informed Neural Networks</a>
-    <li> <a href="https://asa.scitation.org/doi/10.1121/1.5109396" target="_blank">SEM/DG-FEM</a>
-    <li> <a href="https://www.mech.kuleuven.be/en/doctorates/desmet.pdf" target="_blank">WBM (Wave-based method)</a>
-    <li> <a href="https://en.wikipedia.org/wiki/Domain_decomposition_methods" target="_blank">Domain decomposition methods</a>
+    <li> <a href="http://arxiv.org/abs/2109.11313" target="_blank">Physics-Informed Neural Networks (PINNs) for Sound Field Predictions with Parameterized Sources and Impedance Boundaries</a>
+    <li> SEM/DG-FEM
+    <li> <em>The</em> Wave-Based Method (WBM)</a>
+    <li> Domain decomposition methods</a>
 </ul>
 
-<h3>Algorithmic composition</h3>
-In addition, I have a profound interest in algorithmic composition, such as data-driven music creation and harmonization. Previously, I developed a method for harmonising rhythmic music. It uses a hidden Markov model to learn harmonisations of different artists in different genres and allows new chord sequences to be generated with respect to a given melody.
-  
+<h3>Other interests: Algorithmic composition</h3>
+I have a profound interest in algorithmic composition, such as data-driven music creation and harmonization. Previously, I developed a method for harmonizing rhythmic music, and it uses a hidden Markov model to learn harmonizations of different artists in different genres and allows new chord sequences to be generated for a given melody.
+    
 <ul>
     <li> Manuscript: <a href="src/cremo/cremo.pdf" target="_blank">Harmonisation in modern rhythmic music using Hidden Markov Models</a>
     <li> Talk: <a href="https://youtu.be/tc22n7j7ixY" target="_blank">Harmonisation in modern rhythmic music using Hidden Markov Models (Audio Developer Conference, London, 2017)</a>
@@ -133,67 +133,6 @@ Audio examples
         Livetake won the prize for the most promising startup in Denmark within the audio industry. 
         The award was given by the <a href="https://danishsound.org" target="_blank">Danish Sound Network</a>, an innovation network with the aim of connecting start-ups, established companies and knowledge institutions within the Danish Sound industry.
 </ul>
-
-<h2>Teaching</h2>
-<a name="teaching"></a>
-Download the proposed project descriptions <a href="src/projects_VA.pdf" target="_blank"> here</a>. <br> <br>
-
-The project proposals are all centered around the topic `Real-time sound simulations for interactive scenes' with applications in computer games and mixed reality. In interactive scenes, sources and receivers are allowed to move freely, and scene changes should be possible, for example, opening and closing doors, and moving obstacles around. The project proposals are divided into four parts: 
-
-<ul>
-    <li> A) modeling interactive scenes (requires good math/programming skills)
-    <li> B) material modeling (requires good math/programming skills, knowledge in acoustics)
-    <li> C) efficient implementations (requires excellent programming skills)
-    <li> D) method evaluation (requires good knowledge in acoustics)
-</ul>
-
-<h4>Project 1a: Modeling flexible geometries at runtime</h4>
-<p>
-    The impulse responses are calculated offline for fixed positions, restricting the flexibility of the scene at runtime. However, in most real-time environments, some modification to the scene should be possible, for example, opening and closing doors, and moving obstacles around. This project should investigate efficient methods for allowing (some) geometrical flexibility at runtime without pre-computing all possible settings, but instead learning to adapt to changes from few pre-processed settings. The methods should be computation efficient and require low storage, yet still exhibiting physically correct results.
-</p>
-
-<h4>Project 2a: Impulse response interpolations</h4>
-<p>
-    The impulse responses are calculated offline for fixed positions in the scene. At runtime, the receivers are allowed to move freely, also at locations where no impulse responses have been calculated. Simple linear interpolations have shown degraded accuracy and therefore more advanced methods should be investigated. A coarser grid means less storage (which can be hundreds of gigabytes in complex scenes) but requires better reconstruction methods. The goal of this project is to develop methods for reconstructing the sound field between the fixed impulse responses.
-</p>
-
-<h4>Project 3a: Impulse response compression</h4>
-<p>
-    The impulse responses for the scenes are pre-calculated for fixed grid position and the storage requirements can be huge in large, complex scenes (up to hundreds of gigabytes). The goal of this project is to compress the impulse responses, taking human perception into account by considering early and late reflections.
-</p>
-
-<h4>Project 4a: Aesthetic modification of room acoustics for interactive auralization</h4>
-<p>
-    On the contrary to architectural acoustics where the goal is to accurately simulate the real-world, games and mixed reality require aesthetic adjustments to the simulated acoustic properties, still requiring realistic acoustics. Room conditions should be adjusted e.g. to increase the intelligibility of important scripted dialogs, or to enhance the perception of a large room by increasing the reverberation time. This project aims to modify the accurately simulated impulse responses to match some required aesthetics in a simple, efficient, and automized manner.
-</p>
-
-<h4>Project 1b: Modeling sound transmission</h4>
-<p>
-    It is important to be able to model sound transmission through materials - such as walls - for realistic, immersive scenes. Sound transmissions can be divided into two types: airborne and structure-borne/impact sound transmission. Airborne transmission is concerned with sound sources in one room inducing vibrations from air pressure waves on one side of a separating wall impacting the structure to transmit the waves through the material. The other face of the structure starts vibrating, transferring the sound into the new domain. Structure-borne/impact transmission is concerned with a sound source in one room resulting from an object impacting a separating surface transmitting the sound to an adjacent room. An example could be footsteps on the floor being transmitted to a room below. This project is concerned with coming up with efficient methods for modeling sound transmission methods for efficient real-time, interactive scenes.
-</p>
-
-<h4>Project 2b: Open-space sound propagation</h4>
-<p>
-    Our methods for sound propagation have been implemented for room acoustics only, but a typical scenario in interactive scenes includes open-spaces - such as outdoor and semi-outdoor scenes. Possible factors to include could be air attenuations and wind impacting the sound field. The goal of this project is to efficiently and realistically simulate outdoor spaces including factors such as air attenuations and wind.
-</p>
-
-<h4>Project 1c: Implementation of the Wave-Based Method on Massively Parallel Systems</h4>
-<p>
-    The Wave-Based Method has been implemented by the group for simulating wave propagation in rooms and is a numerical method for solving the steady-state Helmholtz equation w.r.t. sound pressure. The method is computationally expensive especially for large rooms and high frequencies and therefore an efficient and high-performant implementation is needed for off-line calculations. The goal is to implement the existing method on massively parallel hardware, scalable to many cluster nodes and GPUs in a low-level language as C/C++/Rust and CUDA/AMD ROCm for GPU capabilities. Middle-layer languages for GPU programming, such as Futhark or OCCA can be considered.
-</p>
-
-<h4>Project 1d: Evaluate Project Triton: a tool for immersive sound propagation for games and mixed reality</h4>
-<p>
-    Microsoft has created “Project Triton” for immersive sound propagation for games and mixed reality and a plugin for Unity is available. This project should investigate how well Triton performs concerning some parameters, e.g.
-    <ul>
-        <li> Obstruction/occlusion (diffraction), reverberance/decay time
-        <li> Source/receiver directivity
-        <li> Compare Triton with geometrical acoustics (GA) in interactive scenes: when does GA break down? Investigate smooth transitions moving around occlusion/obstacles (GA has problems here due to the abrupt change of the direct path)
-        <li> Ease of use: UI/UX, compare with the usual way of designing sound in games (using e.g. Wwise from Audiokinetic)
-        <li> Computational efforts
-    </ul>              
-    3) is particularly interesting: The additional accuracy gained from wave physics might not be needed in computer games, so why use wave physics instead of GA? One reason is the smooth transitions when moving around the scene, where it is claimed that GA cannot ensure this.
-</p>
 
 <h2>Courses taken as part of my PhD study</h2>
 <a name="courses"></a>
