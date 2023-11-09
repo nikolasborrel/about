@@ -2,6 +2,12 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 
 <head>
+    <style>
+        li{
+            margin: 10px 0;
+        }
+    </style>
+
     <meta charset="utf-8">    
     <meta name="description" content="Overview of my research at Acoustic Technology, Department of Electrical Engineering, Technical University of Denmark."/>
     <title>Nikolas Borrel-Jensen</title>
@@ -11,6 +17,7 @@
 
 <hr>
 <CENTER>
+    | <a href="#summary">Summary</a>
     | <a href="#research_interests">Research Interests</a>
     | <a href="#workexperience">Work experience</a>
     | <a href="#education">Education</a>
@@ -23,36 +30,40 @@
 </CENTER>
 <hr>
 
-Nikolas Borrel-Jensen, Master in Computer Science, University of Copenhagen (2012)
+<h2>Summary</h2>
+<a name="summary"></a>
+Nikolas Borrel-Jensen, MSc Computer Science (2012), PhD (2023) <br>
+Software Engineer, Meta Reality Labs (Redmond, US).
 
-<p>
-
-PhD student at <a href="https://www.dtu.dk/service/telefonbog/person?id=50173" target="_blank">Acoustic Technology, Department of Electrical Engineering, Technical University of Denmark</a> (2019-2023). <br>
-Supervisors: Jeong, Cheol-Ho (DTU); Engsig-Karup, Allan Peter (DTU); Hornikx, Maarten (TU Eindhoven)
-
-<hr>
-
-<h2>Research interests</h2>
+<h2>PhD research interests: Virtual acoustics</h2>
 <a name="research_interests"></a>
-
-<h3>PhD research topic: Virtual acoustics</h3>
-I am concerned with developing accurate and efficient methods for simulating room acoustics in dynamic scenes with moving sources/receivers and flexible geometries. Applications are in computer games, mixed reality, and building design. The focus is on traditional numerical methods and machine learning methods for solving the underlying physics, implicitly taking wave phenomena into account.
+I am concerned with developing accurate and efficient methods for simulating room acoustics in dynamic scenes with parametric source/receiver positions. Applications are in computer games, virtual and augmented reality, such as spatial computing and metaverses. The focus is on traditional numerical methods and scientific machine learning methods for solving the underlying physics, implicitly taking wave phenomena into account.
 
 <p>
-Work done thorughout my PhD studies:
+Papers and abstracts:
 <ul>
-    <li> <a href="http://arxiv.org/abs/2109.11313" target="_blank">Physics-informed neural networks for one-dimensional sound field predictions with parameterized sources and impedance boundaries. JASA Express Letters 2021, 1(12), 122402.</a>
-    <li> Accelerating sound propagation in realistic 3D scenes with parameterized sources using deep neural operators. To be submitted in May 2023.
-    <li> A sensitivity analysis on the effect of hyperparameters in deep neural operators applied to sound propagation. To be presentated at a conference in 2023.
-    <li> <a href="https://doi.org/10.3397/IN\_2022\_0383}{https://doi.org/10.3397/IN_2022_0383" target="_blank">Accelerated sound propagation simulations using an error-free Fourier method coupled with the spectral element method.</a> Inter.noise 2022 conference paper.
-    <li> <a href="https://doi-org.proxy.findit.cvt.dk/10.1121/10.0011164" target="_blank">Machine learning-based room acoustics using flow maps and physics-informed neural networks. Journal of the Acoustical Society of America — 2022, Volume 151, Issue 4, pp. A232-A233 (abstract only).</a>.
+    <li>
+        Borrel-Jensen, Nikolas, Allan P. Engsig-Karup, and Cheol-Ho Jeong. “Physics-Informed Neural Networks for One-Dimensional Sound Field Predictions with Parameterized Sources and Impedance Boundaries.” J. Acoust. Soc. Am. Express Letters 1, no. 12 (2021) <a href="https://doi.org/10.1121/10.0009057" target="_blank"> [paper]</a> <a href="https://github.com/dtu-act/pinn-acoustic-wave-prop" target="_blank"> [code]</a>.
+    </li>
+    <li>
+        Borrel-Jensen, Nikolas, Somdatta Goswami, Allan P. Engsig-Karup, George Em Karniadakis, and Cheol-Ho Jeong. “Sound Propagation in Realistic Interactive 3D Scenes with Parameterized Sources Using Deep Neural Operators.” arXiv, (2023) <a href="http://arxiv.org/abs/2308.05141" target="_blank"> [paper]</a> <a href="https://github.com/dtu-act/deeponet-acoustic-wave-prop" target="_blank">[code]</a>.
+    </li>
+    <li>
+        Borrel-Jensen, Nikolas, Allan P Engsig-Karup, and Cheol-Ho Jeong. “A sensitivity analysis on the effect of hyperparameters in deep neural operators applied to sound propagation,” (2023). <a href="https://appfa2023.silsystem.solutions" target="_blank">[paper]</a> <a href="https://github.com/dtu-act/deeponet-acoustic-wave-prop" target="_blank">[code]</a>
+    </li>
+    <li>
+        Borrel-Jensen, Nikolas, Kongens Lyngby, Allan P Engsig-Karup, and Maarten Hornikx. “Accelerated Sound Propagation Simulations Using an Error-Free Fourier Method Coupled with the Spectral Element Method,” Proceeding of Inter.noise 2022, Glasgow, Scotland. <a href="https://backend.orbit.dtu.dk/ws/files/311598785/67._Borrel_Jensen.pdf" target="_blank"> [paper]</a> <a href="https://github.com/dtu-act/numerical-pde-solvers" target="_blank">[code]</a>
+    </li>
+    <li>
+        Nikolas Borrel-Jensen, Allan P. Engsig-Karup, Cheol-Ho Jeong "Machine learning-based room acoustics using flow maps and physics-informed neural networks," J. Acoust. Soc. Am. 1 April 2022; 151: A232–A233. <a href="https://doi.org/10.1121/10.0011164" target="_blank">[abstract]</a> <a href="https://www.researchgate.net/profile/Nikolas-Borrel/publication/360495744_Machine_learning-based_room_acoustics_using_flow_maps_and_physics-informed_neural_networks/" target="_blank">[slides]</a>.
+    </li>    
 </ul>
 
-<h3>Other interests: Algorithmic composition</h3>
+<h2>Algorithmic composition</h2>
 I have a profound interest in algorithmic composition, such as data-driven music creation and harmonization. Previously, I developed a method for harmonizing rhythmic music, and it uses a hidden Markov model to learn harmonizations of different artists in different genres and allows new chord sequences to be generated for a given melody.
     
 <ul>
-    <li> Manuscript: <a href="src/cremo/cremo.pdf" target="_blank">Harmonisation in modern rhythmic music using Hidden Markov Models</a>
+    <li> Manuscript: <a href="src/cremo/borrel_jensen_harmonization2009.pdf" target="_blank">Harmonisation in modern rhythmic music using Hidden Markov Models</a>
     <li> Talk: <a href="https://youtu.be/tc22n7j7ixY" target="_blank">Harmonisation in modern rhythmic music using Hidden Markov Models (Audio Developer Conference, London, 2017)</a>
     <li> Code: <a href="https://github.com/cremo-music/Notus" target="_blank">Domain-specific language for expressing musical structures in the high-level, declarative style of functional programming</a>
 </ul>
@@ -65,24 +76,19 @@ Audio examples
 
 <h2>Work experience</h2>
 <a name="workexperience"></a>
-<ul>    
-    <li>2019-2023: <b>PhD student, Virtual Acoustics, DTU - Technical University of Denmark</b>.
-        Developing and implementing methods for solving the physical governing equations taking geometry and boundary conditions into accounts for describing the acoustics in rooms.
-    <li>2023: <b>Research Scientist Intern, Audio Presence, Meta, Redmond, US</b>.
-    <li>2022: <b>Visiting Research Scholar, Brown University</b>.
-        Visiting the CRUNCH group led by Professor George Karniadakis as part of my PhD studies. The focus was on applying neural operators to learn the wave equation for acoustic wave propagations in rooms.
+<ul>
+    <li>2023 (Nov)-: <b>Software Developer, Audio Presence, Meta, Redmond, US [remote]</b>.        
+    <li>2022 (Dec)-2023 (May): <b>Research Scientist Intern, Audio Presence, Meta, Redmond, US</b>.
     <li>2019: <b>Blockchain Software Developer, eToroX (DK)</b>.
         Developing blockchain solutions for financial trading, collaborating with academia to solve advanced problems in the field.
-    <li>2018-2019: <b>Product Owner/Software Developer, Mobile Solutions, 3Shape (DK)</b>.
-        Leading the Mobile Solutions at 3Shape, one of the world's leading manufacturer of 3D scanners and CAD/CAM software solutions within the dental industry.
-    <li>2013-2018: <b>Mobile Software Developer, 3Shape (DK)</b>.
-        I took over a very young project, re-designed the app and grew the active user base from almost none to a substantial number of users. Leading transition from ObjC/Swift to Xamarin C# involving architectural decisions.
+    <li>2013-2019: <b>Product Owner/Software Developer, Mobile Solutions, 3Shape (DK)</b>.
+        Leading the mobile solutions. I took over a very young project, re-designed the app and grew the active user base from almost none to a substantial number of users. Leading transition from ObjC/Swift to Xamarin C# involving architectural decisions.
     <li>2012-2015: <b>3D Scanner Software Developer, 3Shape (DK)</b>.
         Part of a team of ten people developing 3D dental scanning software written in Delphi/C#.
     <li>2015-2018: <b>Founder, Livetake (DK)</b>.
         Founded the award-winning company <a href="https://livetake.wixsite.com/livetake20" target="_blank">Livetake</a>, making it possible to co-create stories with friends and automatically replace the poor smartphone sound with high quality live sound. Developed the technology stack on my own.
         <ul>
-            <li>Launched at Roskilde Festival 2015 (100.000+ visitors), won a TechCrunch Disrupt award in San Francisco (2015), won the Danish Sound Startup Award (2016).
+            <li>Launched at Roskilde Festival 2015 (100.000+ visitors), won a <a href="https://techcrunch.com/video/eventbrite-award" target="_blank"> TechCrunch Disrupt award</a> in San Francisco (2015), won the Danish Sound Startup Award (2016).
             <li> Partnerships, strategy, business plans, hiring, user tests.
             <li> Web service in Golang; iOS app for synchronizing videos with high-quality audio; <a href="https://livetake.wixsite.com/livemeister" target="_blank">iOS audio app (DAW)</a> for recording multi-channel concert audio
         </ul>
@@ -91,18 +97,24 @@ Audio examples
 <h2>Education</h2>
 <a name="education"></a>
 <ul>
-    <li>2010-2012: <b>MSc in Computer Science, Uni. of Copenhagen, Denmark</b>. Specialized in Mathematical Modelling and Computations.
-    <li>2006-2010: <b>BSc in Computer Science, Uni. of Copenhagen, Denmark</b>.
-    <li>2005-2006: <b>Carl Nielsen Academy of Music, Music Concervatory, Odense, Denmark</b>. Completed first year at the rhythmic section with the guitar as my main instrument.
+    <li>2019-2023: <b>PhD student at Acoustic Technology, Department of Electrical and Photonics Engineering, DTU, DK.</b> <p>Researching scientific machine learning methods for predicting the sound field in dynamic environments; using domain decomposition with numerical methods for solving the wave equation.</p>
+    <li>2022: <b>Visiting Research Scholar, Brown University, US.</b><p>
+        Visiting Professor George Karniadakis working on applying neural operators to learn the wave equation for acoustic wave propagations in rooms.</p>
+    <li>2010-2012: <b>MSc in Computer Science, Uni. of Copenhagen, DK.</b> <p>Specialized in Mathematical Modelling and Computations.</p>
+    <li>2006-2010: <b>BSc in Computer Science, Uni. of Copenhagen, DK</b>.
+    <li>2005-2006: <b>Carl Nielsen Academy of Music, Music Concervatory, Odense, DK.</b> <p>Completed first year at the rhythmic section with the guitar as my main instrument.</p>
 </ul>
 
 <h2>Theses</h2>
 <a name="theses"></a>
 <ul>
-    <li><a href="src/borrel_jensen_masters_thesis_revised.pdf" target="_blank"> Master's Thesis</a> (2012): <b>Real-time Auralisation of the Lower Frequency Sound Field using Numerical Methods on the GPU</b>, Institute for Technical Acoustics, Aachen Uni., DE / Dep. of Computer Science, Uni. of Copenhagen, DK. 
-        <p>The thesis investigated whether it was possible to implement finite-difference time-domain methods for solving the 3-D wave equation in real-time on the GPU using C++/CUDA with focus on physical correct simulations of the lower frequency sound field.
-        
-    <li>Bachelor's Thesis (2009): <b>Computer-assisted music composition -- A database-backed algorithmic composition system</b>, Dep. of Computer Science, Uni. of Copenhagen, DK. 
+    <li><a href="src/borrel_jensen_phd_thesis2023_revised.pdf" target="_blank"> PhD Thesis</a> (2023): <b>Accelerated methods for computing acoustic sound fields in dynamic virtual environments with moving sources</b>, Acoustic Technology, Department of Electrical and Photonics Engineering, DTU, DK.
+        <p>This PhD thesis examines novel scientific machine learning methods to overcome some of the limitations of traditional numerical methods for learning the wave propagation in rooms for parameterized source positions. Also, a domain decomposition method was developed for coupling two numerical methods for accelerating the solutions to the wave equation.
+
+    <li><a href="src/borrel_jensen_masters_thesis2012_revised.pdf" target="_blank"> Master's Thesis</a> (2012): <b>Real-time Auralisation of the Lower Frequency Sound Field using Numerical Methods on the GPU</b>, Institute for Technical Acoustics, Aachen Uni., DE / Dep. of Computer Science, Uni. of Copenhagen, DK. 
+        <p>The thesis investigated whether it was possible to implement finite-difference time-domain methods for solving the 3-D wave equation in real-time on the GPU using C++/CUDA with focus on physical correct simulations of the lower frequency sound field.            
+            
+    <li> <a href="src/borrel_jensen_bachelor_thesis2009.pdf" target="_blank"> Bachelor's Thesis</a> (2009): <b>Computer-assisted music composition -- A database-backed algorithmic composition system</b>, Dep. of Computer Science, Uni. of Copenhagen, DK. 
         <p>Bachelor thesis on the topic 'algorithmic composition' using different machine learning techniques. A software tool was developed for automatically generating music phrase variation and harmonisation from user input, each conforming to a predefined musical genre.
     
 </ul>
@@ -112,7 +124,7 @@ Audio examples
 <ul>    
     <li><b>Notus for Swift, Cremo Music (2019)</b> <a href="https://github.com/cremo-music/Notus" target="_blank">[github]</a>
         <p>Notus is a domain-specific language for expressing musical structures in the high-level, declarative style of functional programming written in Swift.
-    <li> <b>Harmonisation in modern rhythmic music using Hidden Markov Models</b><a href="src/cremo/cremo.pdf" target="_blank"> [manuscript]</a>
+    <li> <b>Harmonisation in modern rhythmic music using Hidden Markov Models</b> <a href="src/cremo/borrel_jensen_harmonization2009.pdf" target="_blank"> [manuscript]</a>
         <p> A method for harmonising rhythmic music is presented. It uses a hidden Markov model to learn harmonisations of different artists in different genres and allows new chord sequences to be generated with respect to a given melody.
     <li><b>San Diego (music)</b> <a href="https://soundcloud.com/nikolas-borrel-jensen/sets/san-diego-sketches" target="_blank">[soundcloud]</a>
         <p>I have started composing and playing music again after years of hibernation. Some rough sketches for my project San Diego can be found on SoundCloud.
@@ -120,17 +132,21 @@ Audio examples
 <h2>Talks and awards</h2>
 <a name="talks"></a>
 <ul>
-    <li> <b>Invited speaker at Primavera Pro</b>, Barcelona, Spain (2018). Gave a 25 minutes talk about Livetake and how to engage concertgoers.
+    <li> <b>PhD defence</b>, DTU, Lyngby, DK (2023) <a href="https://youtu.be/WxKtcF4_D20" target="_blank">[video]</a> <p>
+        Gave a 45 min presentation as part of my PhD defence with the title "Accelerated methods for computing acoustic sound fields in dynamic virtual environments with moving sources".
+    </p>
+    <li> <b>Invited speaker at Primavera Pro</b>, Barcelona, Spain (2018) 
+        <p>Gave a 25 minutes talk about Livetake and how to engage concertgoers.</p>
     <li> <b>Keynote speaker at Audio Developer Conference</b>, London (2017) <a href="https://youtu.be/tc22n7j7ixY" target="_blank">[video]</a>
         <p>
-        A method for harmonising rhythmic music, implemented in Haskell, will be presented. It uses a hidden Markov model to learn harmonisations of different artists in different genres and allows new chord sequences to be generated with respect to a given melody. The main focus of this talk is on how to perform the feature extraction for the chords and the melody lines necessary for the method to perform well.        
+        A method for harmonising rhythmic music, implemented in Haskell, will be presented. It uses a hidden Markov model to learn harmonisations of different artists in different genres and allows new chord sequences to be generated with respect to a given melody. The main focus of this talk is on how to perform the feature extraction for the chords and the melody lines necessary for the method to perform well.
     <li> <b>Eventbrite Live Award at TechCrunch Disrupt San Francisco (2015)</b><a href="https://techcrunch.com/video/eventbrite-award" target="_blank"> [video]</a>
         <p>
         Livetake participated in the TechCrunch Disrupt Event 2015 in San Francisco and demonstrated their latest technology. The prize for the technology that most enhance live concert experiences was given to Livetake.
     <li> <b>Danish Sound Startup Award (2016)</b>
         <p>
         Livetake won the prize for the most promising startup in Denmark within the audio industry. 
-        The award was given by the <a href="https://danishsound.org" target="_blank">Danish Sound Network</a>, an innovation network with the aim of connecting start-ups, established companies and knowledge institutions within the Danish Sound industry.
+        The award was given by the <a href="http://danishsoundcluster.dk/" target="_blank">Danish Sound Cluster</a>, an innovation network with the aim of connecting start-ups, established companies and knowledge institutions within the Danish Sound industry.
 </ul>
 
 <h2>Courses taken as part of my PhD study</h2>
@@ -149,10 +165,6 @@ Audio examples
 <a name="contact"></a>
 
 <b>Nikolas Borrel-Jensen</b><br>
-Department of Electrical Engineering, Technical University of Denmark<br>
-Oersteds Plads, Building 352, room 004, 2800 Kgs. Lyngby<br>
 
-<P>
-
-E-mail: <a href="mailto: nibor@dtu.dk">nibor@dtu.dk</a> <br>
+E-mail: <a href="mailto: nikolasborrel@gmail.dk">nikolasborrel@gmail.dk</a> <br>
 Phone: (+45) 60 95 85 24 <br>
